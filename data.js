@@ -85,14 +85,18 @@ const WORKS = [
     title: "Ticket-Style Card",
     category: "Card Design",
     date: "2024",
-    cover: "assets/birthday_card.png",
+    cover: "assets/TicketCard/Mockup.png",
     coverFit: "contain",
     lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
     description: [
       "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
       "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
     ],
-    images: ["assets/birthday_card.png","assets/mothersday_card.png","assets/halloween_card.png"]
+    images: [
+      "assets/TicketCard/birthday_card.png",
+      "assets/TicketCard/mothersday_card.png",
+      "assets/TicketCard/halloween_card.png"
+    ]
   },
   {
     id: 8,
@@ -237,7 +241,7 @@ const WORKS = [
     title: "Long-Chen Temple",
     category: "Illustration",
     date: "2022",
-    cover: "assets/longchen temple/03.PNG",
+    cover: "assets/LongchenTemple/03.PNG",
     lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
     description: [
       "這裡是作品描述範例。",
@@ -245,15 +249,15 @@ const WORKS = [
     ],
     galleryLayout: "grid",
     images: [
-      "assets/longchen temple/01.PNG",
-      "assets/longchen temple/03.PNG",
-      "assets/longchen temple/02.PNG",
-      "assets/longchen temple/04.PNG",
-      "assets/longchen temple/09.png",
-      "assets/longchen temple/06.PNG",
-      "assets/longchen temple/05.PNG",
-      "assets/longchen temple/07.PNG",
-      "assets/longchen temple/08.PNG",
+      "assets/LongchenTemple/01.PNG",
+      "assets/LongchenTemple/03.PNG",
+      "assets/LongchenTemple/02.PNG",
+      "assets/LongchenTemple/04.PNG",
+      "assets/LongchenTemple/09.png",
+      "assets/LongchenTemple/06.PNG",
+      "assets/LongchenTemple/05.PNG",
+      "assets/LongchenTemple/07.PNG",
+      "assets/LongchenTemple/08.PNG",
     ]
   },
   {
@@ -261,14 +265,30 @@ const WORKS = [
     title: "Apple Valley",
     category: "Illustration",
     date: "2021",
-    cover: "assets/applevalley.jpg",
+    cover: "assets/AppleValley/applevalley.jpg",
     lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
     description: [
       "這裡是作品描述範例。",
       "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
     ],
     images: [
-      "assets/applevalley.jpg",
+      "assets/AppleValley/applevalley.jpg",
+    ]
+  },
+  {
+    id: 18,
+    title: "Don't Drop the Soap",
+    category: "Comic",
+    coverFit: "contain",
+    date: "2020",
+    cover: "assets/Dont drop the soap.png",
+    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    description: [
+      "這裡是作品描述範例。",
+      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+    ],
+    images: [
+      "assets/Dont drop the soap.png",
     ]
   },
 ];
