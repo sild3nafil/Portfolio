@@ -69,7 +69,7 @@ const WORKS = [
   {
     id: 6,
     title: "90139",
-    category: "Paper Sculpture",
+    category: "Paper Sculpture, Website Design",
     date: "2024",
     cover: "assets/90139.png",
     lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
@@ -208,15 +208,14 @@ const WORKS = [
     title: "UNO Is Not My Game",
     category: "Animation",
     date: "2024",
-    cover: "assets/UNO.png",
+    cover: "assets/UNO.jpg",
     lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
     description: [
       "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
       "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
     ],
-    images: [
-      "assets/UNO is not my game_sound.mp4"
-    ]
+    youtube: "Jj6Hb2sOipA",
+    images: []
   },
   {
     id: 15,
@@ -255,6 +254,21 @@ const WORKS = [
       "assets/longchen temple/05.PNG",
       "assets/longchen temple/07.PNG",
       "assets/longchen temple/08.PNG",
+    ]
+  },
+  {
+    id: 17,
+    title: "Apple Valley",
+    category: "Illustration",
+    date: "2021",
+    cover: "assets/applevalley.jpg",
+    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    description: [
+      "這裡是作品描述範例。",
+      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+    ],
+    images: [
+      "assets/applevalley.jpg",
     ]
   },
 ];

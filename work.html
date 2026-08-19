@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>作品 | Portfolio</title>
+  <title>YUHAOCHI Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="detail-page">
@@ -53,6 +53,18 @@
         <p class="lead">${work.lead}</p>
         ${work.description.map(p => `<p>${p}</p>`).join("")}
       </section>
+
+      ${work.youtube ? `
+        <section class="detail-video">
+          <iframe
+            src="https://www.youtube.com/embed/${work.youtube}"
+            title="${work.title}"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </section>
+      ` : ""}
 
       ${work.embedUrl ? `
         <section class="detail-embed">
