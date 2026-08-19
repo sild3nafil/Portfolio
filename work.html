@@ -28,10 +28,17 @@
 
     const id = Number(params.get("id"));
     const page = Number(params.get("page")) || 1;
+    const sort = params.get("sort") || "default";
 
     const work = WORKS.find(w => w.id === id) || WORKS[0];
 
-    const backUrl = `index.html?page=${page}`;
+    const sortQuery =
+      sort !== "default"
+        ? `&sort=${sort}`
+        : "";
+
+    const backUrl =
+      `index.html?page=${page}${sortQuery}`;
 
     /* 右上角 X 回到原本頁數 */
     document.getElementById("closeBtn").href = backUrl;

@@ -101,6 +101,12 @@ img{display:block;width:100%}
   font-size:12px;letter-spacing:.15em;color:var(--muted);margin:0 0 10px
 }
 .intro h1{font-size:clamp(28px,5vw,54px);margin:0;font-weight:650;letter-spacing:-.035em}
+.intro-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+}
 .work-list{
   max-width:var(--max);margin:0 auto;padding:16px 24px 42px;
   display:grid;grid-template-columns:1fr 1fr;gap:54px 34px;
@@ -234,11 +240,171 @@ footer{
   border: 0;
 }
 
+/* =========================
+   SORT DROPDOWN
+========================= */
+
+.sort-control{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:7px;
+}
+
+.sort-label{
+  font-size:10px;
+  letter-spacing:.15em;
+  color:var(--muted);
+}
+
+
+/* 外層 */
+
+.sort-dropdown{
+  position:relative;
+  width:180px;
+}
+
+
+/* 目前選擇 */
+
+.sort-trigger{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:10px 12px;
+
+  border:1px solid var(--line);
+  background:transparent;
+
+  font-family:inherit;
+  font-size:14px;
+  line-height:1;
+
+  color:var(--ink);
+
+  cursor:pointer;
+}
+
+
+/* 箭頭 */
+
+.sort-arrow{
+  display:inline-block;
+  font-size:13px;
+
+  transition:transform .25s ease;
+}
+
+
+/* 選單打開時箭頭翻轉 */
+
+.sort-dropdown.open .sort-arrow{
+  transform:rotate(180deg);
+}
+
+
+/* 下拉內容 */
+
+.sort-menu{
+  position:absolute;
+
+  top:calc(100% + 5px);
+  left:0;
+
+  width:100%;
+
+  background:var(--paper);
+  border:1px solid var(--line);
+
+  z-index:50;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(-6px);
+
+  transition:
+    opacity .2s ease,
+    transform .2s ease,
+    visibility .2s;
+}
+
+
+/* 打開 */
+
+.sort-dropdown.open .sort-menu{
+  opacity:1;
+  visibility:visible;
+
+  transform:translateY(0);
+}
+
+
+/* 選項 */
+
+.sort-menu button{
+  width:100%;
+
+  display:block;
+
+  padding:11px 12px;
+
+  border:0;
+  border-bottom:1px solid var(--line);
+
+  background:transparent;
+
+  text-align:left;
+
+  font-family:inherit;
+  font-size:14px;
+
+  color:var(--ink);
+
+  cursor:pointer;
+
+  transition:
+    background .15s ease,
+    padding-left .15s ease;
+}
+
+
+.sort-menu button:last-child{
+  border-bottom:0;
+}
+
+
+/* Hover */
+
+.sort-menu button:hover{
+  background:#111;
+  color:#fff;
+
+  padding-left:16px;
+}
+
+
+/* 目前選中的項目 */
+
+.sort-menu button.active{
+  font-weight:600;
+}
+
 @media (max-width: 720px){
   .site-header{height:74px;padding:0 22px}
   .menu{top:74px}
   .brand{font-size:14px}
   .intro{padding-top:38px}
+  .intro-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:28px;
+  }
+  .sort-control{align-items:flex-start;}
+  .sort-dropdown{width:180px;}
   .work-list{grid-template-columns:1fr;gap:48px;padding-left:28px;padding-right:28px}
   .work-info h2{font-size:24px}
   .meta{font-size:14px}
