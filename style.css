@@ -135,9 +135,127 @@ img{display:block;width:100%}
 .work-cover img.contain {
   object-fit: contain;
 }
-.work-card:hover img{transform:scale(1.025);filter:contrast(1.03)}
+/* =========================
+   WORK CARD HOVER
+========================= */
+
+.work-card{
+  display:block;
+}
+
+.work-cover{
+  position:relative;
+}
+
+.work-cover img{
+  transition:
+    transform .6s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease;
+}
+
+/* 非常淡的 hover overlay */
+.work-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#000;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .4s ease;
+}
+
+/* Title */
+
+.work-info h2{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  transition:
+    transform .35s cubic-bezier(.2,.7,.2,1);
+}
+
+.work-info .meta{
+  transition:
+    transform .35s cubic-bezier(.2,.7,.2,1),
+    color .35s ease;
+}
+
+/* Arrow */
+
+.work-arrow{
+  font-size:18px;
+
+  opacity:0;
+  transform:translate(-8px, 8px);
+
+  transition:
+    opacity .3s ease,
+    transform .35s cubic-bezier(.2,.7,.2,1);
+}
+
+
+/* ===== Hover ===== */
+
+.work-card:hover .work-cover img{
+  transform:scale(1.04);
+}
+
+.work-card:hover .work-cover::after{
+  opacity:.035;
+}
+
+.work-card:hover .work-info h2,
+.work-card:hover .work-info .meta{
+  transform:translateX(4px);
+}
+
+.work-card:hover .work-arrow{
+  opacity:1;
+  transform:translate(0,0);
+}
 .work-info{padding-top:18px}
 .work-info h2{font-size:22px;margin:0 0 9px;letter-spacing:-.02em}
+
+/* =========================
+   WORK DETAILS
+========================= */
+
+.detail-specs{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:32px;
+}
+
+.detail-spec{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.detail-spec-label{
+  font-size:10px;
+  letter-spacing:.15em;
+  color:var(--muted);
+}
+
+.detail-spec-value{
+  font-size:14px;
+  line-height:1.5;
+  color:var(--ink);
+}
+
+.detail-rule-after-specs{
+  margin-top:34px;
+}
+
+@media (max-width:720px){
+  .detail-specs{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+}
+
 .meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:14px}
 .pagination{
   max-width:var(--max);margin:0 auto 74px;padding:0 24px;
@@ -259,15 +377,12 @@ footer{
 
 
 /* 外層 */
-
 .sort-dropdown{
   position:relative;
   width:180px;
 }
 
-
 /* 目前選擇 */
-
 .sort-trigger{
   width:100%;
   display:flex;
@@ -288,9 +403,7 @@ footer{
   cursor:pointer;
 }
 
-
 /* 箭頭 */
-
 .sort-arrow{
   display:inline-block;
   font-size:13px;
@@ -298,16 +411,12 @@ footer{
   transition:transform .25s ease;
 }
 
-
 /* 選單打開時箭頭翻轉 */
-
 .sort-dropdown.open .sort-arrow{
   transform:rotate(180deg);
 }
 
-
 /* 下拉內容 */
-
 .sort-menu{
   position:absolute;
 
@@ -332,9 +441,7 @@ footer{
     visibility .2s;
 }
 
-
 /* 打開 */
-
 .sort-dropdown.open .sort-menu{
   opacity:1;
   visibility:visible;
@@ -344,7 +451,6 @@ footer{
 
 
 /* 選項 */
-
 .sort-menu button{
   width:100%;
 
@@ -371,14 +477,11 @@ footer{
     padding-left .15s ease;
 }
 
-
 .sort-menu button:last-child{
   border-bottom:0;
 }
 
-
 /* Hover */
-
 .sort-menu button:hover{
   background:#111;
   color:#fff;
@@ -386,11 +489,119 @@ footer{
   padding-left:16px;
 }
 
-
 /* 目前選中的項目 */
-
 .sort-menu button.active{
   font-weight:600;
+}
+
+/* =========================
+   DOODLE
+========================= */
+
+#doodleCanvas{
+  position:absolute;
+  top:0;
+  left:0;
+
+  z-index:50;
+  pointer-events:none;
+
+  touch-action:none;
+}
+
+body.draw-mode #doodleCanvas{
+  pointer-events:auto;
+  cursor:crosshair;
+}
+
+/* 整個控制區 */
+.doodle-ui{
+  position:fixed;
+
+  left:max(18px, env(safe-area-inset-left));
+  bottom:max(18px, env(safe-area-inset-bottom));
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  z-index:9999;
+}
+
+/* 鉛筆 */
+.doodle-pencil{
+  width:42px;
+  height:42px;
+
+  border:1px solid #111;
+  border-radius:50%;
+
+  background:#fff;
+  color:#111;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:19px;
+
+  cursor:pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+.doodle-pencil:hover{
+  transform:rotate(-12deg);
+}
+
+/* 畫圖模式 */
+body.draw-mode .doodle-pencil{
+  background:#111;
+  color:#fff;
+}
+
+
+/* UNDO / CLEAR / DONE */
+.doodle-tools{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  opacity:0;
+  transform:translateX(-8px);
+
+  pointer-events:none;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+}
+
+body.draw-mode .doodle-tools{
+  opacity:1;
+  transform:translateX(0);
+
+  pointer-events:auto;
+}
+
+.doodle-tools button{
+  padding:0;
+
+  border:none;
+  background:none;
+
+  font:inherit;
+  font-size:10px;
+  letter-spacing:.12em;
+
+  cursor:pointer;
+}
+
+.doodle-tools button:hover{
+  text-decoration:underline;
 }
 
 @media (max-width: 720px){
@@ -411,4 +622,18 @@ footer{
   .about p{font-size:18px}
   footer{flex-direction:column}
   .detail-shell{padding-top:42px}
+
+  .doodle-ui{
+    left:max(16px, env(safe-area-inset-left));
+    bottom:max(16px, env(safe-area-inset-bottom));
+    gap:10px;
+  }
+
+  .doodle-tools{
+    gap:9px;
+  }
+
+  .doodle-tools button{
+    font-size:9px;
+  }
 }

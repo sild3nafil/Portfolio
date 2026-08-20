@@ -50,12 +50,34 @@
       <header class="detail-head">
         <p class="detail-kicker">${work.category}</p>
         <h1>${work.title}</h1>
-        <div class="meta">
-          <span>${work.date}</span>
-        </div>
       </header>
 
       <div class="detail-rule"></div>
+
+      <section class="detail-specs">
+
+        <div class="detail-spec">
+          <span class="detail-spec-label">YEAR</span>
+          <span class="detail-spec-value">${work.date}</span>
+        </div>
+
+        ${work.medium ? `
+          <div class="detail-spec">
+            <span class="detail-spec-label">MEDIUM</span>
+            <span class="detail-spec-value">${work.medium}</span>
+          </div>
+        ` : ""}
+
+        ${work.size ? `
+          <div class="detail-spec">
+            <span class="detail-spec-label">SIZE</span>
+            <span class="detail-spec-value">${work.size}</span>
+          </div>
+        ` : ""}
+
+      </section>
+
+      <div class="detail-rule detail-rule-after-specs"></div>
 
       <section class="detail-copy">
         <p class="lead">${work.lead}</p>

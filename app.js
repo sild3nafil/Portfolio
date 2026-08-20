@@ -274,7 +274,10 @@ function render(){
 
         <div class="work-info">
 
-          <h2>${work.title}</h2>
+          <h2>
+            <span>${work.title}</span>
+            <span class="work-arrow">↗</span>
+          </h2>
 
           <div class="meta">
 
@@ -358,5 +361,195 @@ window.addEventListener(
   render
 );
 
+/* Doodle */
+const canvas = document.getElementById("doodleCanvas");
+
+if(canvas){
+
+  const ctx = canvas.getContext("2d");
+
+  const drawToggle = document.getElementById("drawToggle");
+  const undoButton = document.getElementById("undoDrawing");
+  const clearButton = document.getElementById("clearDrawing");
+  const doneButton = document.getElementById("doneDrawing");
+
+  let drawMode = false;
+  let drawing = false;
+
+  let currentStroke = [];
+  let strokes = [];
+
+
+  function resizeCanvas(){
+
+    const ratio = window.devicePixelRatio || 1;
+
+    const footer = document.querySelector("footer");
+
+    const width = document.documentElement.clientWidth;
+
+    let height;
+
+    if(footer){
+      height =
+        footer.getBoundingClientRect().bottom +
+        window.scrollY;
+    }else{
+      height = document.body.offsetHeight;
+    }
+
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+
+    ctx.setTransform(
+      ratio,
+      0,
+      0,
+      ratio,
+      0,
+      0
+    );
+
+    redraw();
+  }
+
+
+  function drawStroke(points){
+
+    if(points.length < 2) return;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      points[0].x,
+      points[0].y
+    );
+
+    for(let i = 1; i < points.length; i++){
+
+      ctx.lineTo(
+        points[i].x,
+        points[i].y
+      );
+    }
+
+    ctx.stroke();
+  }
+
+
+  function redraw(){
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "#111";
+
+    strokes.forEach(drawStroke);
+  }
+
+
+  drawToggle.addEventListener("click", () => {
+
+    drawMode = !drawMode;
+
+    document.body.classList.toggle(
+      "draw-mode",
+      drawMode
+    );
+  });
+
+
+  doneButton.addEventListener("click", () => {
+
+    drawMode = false;
+
+    document.body.classList.remove(
+      "draw-mode"
+    );
+  });
+
+
+  canvas.addEventListener("pointerdown", e => {
+
+    if(!drawMode) return;
+
+    drawing = true;
+
+    currentStroke = [
+      {
+        x:e.pageX,
+        y:e.pageY
+      }
+    ];
+
+    canvas.setPointerCapture(e.pointerId);
+  });
+
+
+  canvas.addEventListener("pointermove", e => {
+
+    if(!drawing) return;
+
+    currentStroke.push({
+      x:e.pageX,
+      y:e.pageY
+    });
+
+    redraw();
+    drawStroke(currentStroke);
+  });
+
+
+  canvas.addEventListener("pointerup", () => {
+
+    if(!drawing) return;
+
+    drawing = false;
+
+    strokes.push(currentStroke);
+    currentStroke = [];
+  });
+
+
+  undoButton.addEventListener("click", () => {
+
+    strokes.pop();
+
+    redraw();
+  });
+
+
+  clearButton.addEventListener("click", () => {
+
+    strokes = [];
+
+    redraw();
+  });
+
+
+  window.addEventListener("resize", resizeCanvas);
+
+  /* 等所有圖片載入完成後，再重新抓一次完整頁面高度 */
+  window.addEventListener("load", resizeCanvas);
+
+  /* 網頁內容高度改變時，自動更新 Canvas */
+  const canvasResizeObserver = new ResizeObserver(() => {
+    resizeCanvas();
+  });
+
+  canvasResizeObserver.observe(document.body);
+
+  resizeCanvas();
+}
 
 render();
