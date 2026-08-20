@@ -3,6 +3,11 @@ my portfolio website
 https://sild3nafil.github.io/Portfolio/<br><br>
 
 # Update History
+v5
+- 新增社群媒體
+- 調整漢堡選單點選後移動速度
+- 修改簡介區塊寬度
+
 v4
 - 新增繪畫功能
 - 增加作品資訊: 媒材、尺寸
