@@ -3,6 +3,10 @@ my portfolio website
 https://sild3nafil.github.io/Portfolio/<br><br>
 
 # Update History
+
+v6
+- 滾動作品展示
+
 v5
 - 新增社群媒體
 - 調整漢堡選單點選後移動速度
