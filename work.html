@@ -20,6 +20,7 @@
   </main>
 
   <script src="data.js"></script>
+  <script src="marquee-gallery.js"></script>
   <script>
     /*const params = new URLSearchParams(location.search);
     const id = Number(params.get("id"));
@@ -118,7 +119,11 @@
                 </video>
               `
               : `
-                <img src="${src}" alt="${work.title} 圖片 ${i+1}" loading="lazy">
+                <img
+                src="${src}"
+                alt="${work.title} 圖片 ${i+1}"
+                loading="${work.galleryLayout === "marquee" ? "eager" : "lazy"}"
+                >
               `
             }
           </figure>
@@ -129,6 +134,10 @@
         <a href="${backUrl}">← Back to works</a>
       </nav>
     `;
+
+    if (work.galleryLayout === "marquee") {
+      initMarqueeGallery();
+    }
   </script>
 </body>
 </html>

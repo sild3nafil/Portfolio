@@ -109,47 +109,6 @@ menuBtn?.addEventListener("click", () => {
 
 });
 
-menu?.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
-    const target = document.querySelector(link.getAttribute("href"));
-
-    if (!target) return;
-
-    e.preventDefault();
-
-    smoothScrollTo(target, 600);
-  });
-});
-
-function smoothScrollTo(target, duration = 800) {
-  const start = window.scrollY;
-  const end = target.getBoundingClientRect().top + window.scrollY;
-  const distance = end - start;
-  const startTime = performance.now();
-
-  function animation(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-
-    const ease = 1 - Math.pow(1 - progress, 3);
-
-    window.scrollTo(0, start + distance * ease);
-
-    if (progress < 1) {
-      requestAnimationFrame(animation);
-    }
-  }
-
-  requestAnimationFrame(animation);
-}
-
 
 /* =========================
    Sort
@@ -592,7 +551,5 @@ if(canvas){
 
   resizeCanvas();
 }
-
-
 
 render();
