@@ -251,19 +251,23 @@ const WORKS = [
   },
   {
     id: 15,
-    title: "Diving",
-    category: "Illustation",
+    title: "Stamp",
+    category: "Illustration",
+    coverFit: "contain",
     date: "2026",
-    medium: "數位插畫",
-    size: "21 × 29.7 cm",
-    cover: "assets/Diving.png",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    medium: "數位插畫、郵票",
+    size: "1000 × 1000 px",
+    cover: "assets/Stamp/01.png",
+    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "這裡是作品描述範例。",
+      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
     ],
+    galleryLayout: "marquee",
     images: [
-      "assets/Diving.png"
+      "assets/Stamp/01.png",
+      "assets/Stamp/02.png",
+      "assets/Stamp/03.png",
     ]
   },
   {
@@ -329,23 +333,19 @@ const WORKS = [
   },
   {
     id: 19,
-    title: "Stamp",
-    category: "Illustration",
-    coverFit: "contain",
+    title: "Diving",
+    category: "Illustation",
     date: "2026",
-    medium: "數位插畫、郵票",
-    size: "1000 × 1000 px",
-    cover: "assets/Stamp/01.png",
-    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    medium: "數位插畫",
+    size: "21 × 29.7 cm",
+    cover: "assets/Diving.png",
+    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
     description: [
-      "這裡是作品描述範例。",
-      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
+      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
     ],
-    galleryLayout: "marquee",
     images: [
-      "assets/Stamp/01.png",
-      "assets/Stamp/02.png",
-      "assets/Stamp/03.png",
+      "assets/Diving.png"
     ]
   },
 ];

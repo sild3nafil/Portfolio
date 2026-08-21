@@ -15,10 +15,11 @@ function initMarqueeGallery() {
   let dragging = false;
   let dragStartX = 0;
   let dragStartScroll = 0;
+  let touching = false;
 
   let pausedUntil = 0;
 
-  const SPEED = 25;
+  const SPEED = 100;
 
 
   /* =========================
@@ -138,20 +139,15 @@ function initMarqueeGallery() {
 
   function animate(now) {
     const delta = Math.min(
-      (now - lastTime) / 1000,
-      0.05
+        (now - lastTime) / 1000,
+        0.05
     );
 
     lastTime = now;
 
-    if (
-      initialized &&
-      !dragging &&
-      now >= pausedUntil
-    ) {
-      gallery.scrollLeft += SPEED * delta;
-
-      normalizeScroll();
+    if (!dragging && !touching) {
+        gallery.scrollLeft += SPEED * delta;
+        normalizeScroll();
     }
 
     requestAnimationFrame(animate);
@@ -234,11 +230,10 @@ function initMarqueeGallery() {
   /* =========================
      手機觸控
      ========================= */
-
   gallery.addEventListener(
     "touchstart",
     () => {
-      pausedUntil = Infinity;
+        touching = true;
     },
     { passive: true }
   );
@@ -246,11 +241,19 @@ function initMarqueeGallery() {
   gallery.addEventListener(
     "touchend",
     () => {
-      normalizeScroll();
-
-      pausedUntil =
-        performance.now() + 150;
+        touching = false;
+        normalizeScroll();
     },
     { passive: true }
   );
+
+  gallery.addEventListener(
+    "touchcancel",
+    () => {
+        touching = false;
+        normalizeScroll();
+    },
+    { passive: true }
+  );
+  
 }

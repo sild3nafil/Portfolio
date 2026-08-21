@@ -647,6 +647,8 @@ body.draw-mode .doodle-tools{
   -ms-overflow-style: none;
 
   overscroll-behavior-x: contain;
+  
+  -webkit-overflow-scrolling: touch;
 }
 
 .detail-gallery.marquee-gallery::-webkit-scrollbar {
