@@ -119,11 +119,7 @@
                 </video>
               `
               : `
-                <img
-                src="${src}"
-                alt="${work.title} 圖片 ${i+1}"
-                loading="${work.galleryLayout === "marquee" ? "eager" : "lazy"}"
-                >
+                <img src="${src}" alt="${work.title} 圖片 ${i+1}" loading="lazy">
               `
             }
           </figure>
