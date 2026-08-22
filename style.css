@@ -10,7 +10,7 @@
   --max:1120px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior: smooth}
 body{
   margin:0;
   background:
@@ -285,7 +285,45 @@ img{display:block;width:100%}
   max-width:var(--max);margin:0 auto;padding:70px 24px 100px;
   border-top:1px solid var(--line)
 }
-.about p{max-width:720px;font-size:22px;line-height:1.75;margin:0}
+.about p{
+  max-width: 1000px;
+  font-size: 22px;
+  line-height: 1.75;
+  margin: 0;
+}
+.social {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 60px 24px 90px;
+  border-top: 1px solid var(--line);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.social-links a {
+  display: block;
+}
+
+.social-links img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease;
+}
+
+.social-links a:hover img {
+  transform: translateY(-4px);
+  opacity: .65;
+}
+
 footer{
   background:#111;color:#aaa;padding:28px max(24px, calc((100vw - var(--max))/2));
   display:flex;justify-content:space-between;gap:20px;font-size:12px
@@ -303,7 +341,7 @@ footer{
 .detail-copy p{font-size:18px;line-height:1.95;color:#575757}
 .detail-copy .lead{font-size:25px;color:#1c1c1c;margin-bottom:36px}
 .detail-gallery{display:grid;gap:22px;margin-top:48px}
-.detail-gallery figure{margin:0;background:transparent;}
+.detail-gallery figure{margin:0;background: transparent;}
 .detail-gallery video {display: block; width: 100%; height: auto;}
 .detail-nav{margin-top:60px;padding-top:24px;border-top:1px solid var(--line)}
 
@@ -630,25 +668,15 @@ body.draw-mode .doodle-tools{
 .detail-gallery.marquee-gallery {
   display: flex;
   align-items: center;
-  gap: 60px;
-  background: #656762;
 
-  width: 100%;
+  gap: 90px;
+
   overflow-x: auto;
   overflow-y: hidden;
 
-  margin-top: 48px;
-  padding: 40px 0;
+  background: #676963;
 
-  cursor: grab;
-  user-select: none;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  overscroll-behavior-x: contain;
-  
-  -webkit-overflow-scrolling: touch;
+  padding: 8vmin 0;
 }
 
 .detail-gallery.marquee-gallery::-webkit-scrollbar {
@@ -660,16 +688,13 @@ body.draw-mode .doodle-tools{
 }
 
 .detail-gallery.marquee-gallery figure {
-  flex: 0 0 auto;
+  flex: none;
+
+  width: max-content;
   height: 40vmin;
 
   margin: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
+  padding: 0;
 
   background: transparent;
 }
@@ -678,14 +703,12 @@ body.draw-mode .doodle-tools{
 .detail-gallery.marquee-gallery video {
   display: block;
 
-  width: 100%;
+  width: auto;
   height: 100%;
 
-  object-fit: contain;
-  object-position: center;
+  max-width: none;
 
-  pointer-events: none;
-  -webkit-user-drag: none;
+  object-fit: initial;
 }
 
 @media (max-width: 720px){
@@ -719,5 +742,9 @@ body.draw-mode .doodle-tools{
 
   .doodle-tools button{
     font-size:9px;
+  }
+
+  .detail-gallery.marquee-gallery {
+    gap: 20px;
   }
 }
