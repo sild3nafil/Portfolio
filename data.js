@@ -287,6 +287,7 @@ const WORKS = [
       "assets/Stamp/02.png",
       "assets/Stamp/03.png",
       "assets/Stamp/04.png",
+      "assets/Stamp/05.png",
     ]
   },
   {
