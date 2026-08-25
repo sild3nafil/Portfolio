@@ -329,8 +329,8 @@ const WORKS = [
     ],
     images: [
       "assets/AppleValley/applevalley.jpg",
-      "assets/AppleValley/Draft01.jpg",
-      "assets/AppleValley/Draft02.jpg",
+      "assets/AppleValley/Draft01.jpeg",
+      "assets/AppleValley/Draft02.jpeg",
     ]
   },
   {
