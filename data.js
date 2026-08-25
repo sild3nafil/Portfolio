@@ -295,6 +295,7 @@ const WORKS = [
       "assets/Stamp/01.png",
       "assets/Stamp/02.png",
       "assets/Stamp/03.png",
+      "assets/Stamp/04.png",
     ]
   },
   {
@@ -358,7 +359,7 @@ const WORKS = [
     ]
   },
   {
-    id: 15,
+    id: 19,
     title: "Diving",
     category: "Illustation",
     date: "2026",
