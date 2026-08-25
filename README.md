@@ -3,6 +3,8 @@ my portfolio website
 https://sild3nafil.github.io/Portfolio/<br><br>
 
 # Update History
+v7
+- Text hovering animation
 
 v6
 - 滾動作品展示
