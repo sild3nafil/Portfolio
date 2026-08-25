@@ -348,5 +348,4 @@ const WORKS = [
       "assets/Dont drop the soap.png",
     ]
   },
-  },
 ];
