@@ -194,8 +194,32 @@ img{display:block;width:100%}
     transform .35s cubic-bezier(.2,.7,.2,1);
 }
 
+/* =========================
+   TITLE LETTER ANIMATION
+========================= */
+
+.work-title {
+  display: inline-flex;
+}
+
+.work-title-char {
+  display: inline-block;
+
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    color .35s ease;
+
+  transition-delay:
+    calc(var(--i) * 25ms);
+}
+
 
 /* ===== Hover ===== */
+
+.work-card:hover .work-title-char {
+  transform: translateY(-5px);
+  color: #13bac0;
+}
 
 .work-card:hover .work-cover img{
   transform:scale(1.04);

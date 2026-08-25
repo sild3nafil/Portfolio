@@ -316,7 +316,14 @@ function render(){
         <div class="work-info">
 
           <h2>
-            <span>${work.title}</span>
+            <span class="work-title">
+              ${[...work.title].map((char, i) => `
+                <span
+                  class="work-title-char"
+                  style="--i:${i}"
+                >${char === " " ? "&nbsp;" : char}</span>
+              `).join("")}
+            </span>
             <span class="work-arrow">↗</span>
           </h2>
 
