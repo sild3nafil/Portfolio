@@ -128,10 +128,9 @@ const WORKS = [
     size: "8 × 20.5 cm",
     cover: "assets/TicketCard/Mockup.png",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     images: [
       "assets/TicketCard/birthday_card.png",
@@ -148,10 +147,9 @@ const WORKS = [
     size: "21 × 21 cm",
     cover: "assets/Cactus/image3.PNG",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     images: [
       "assets/Cactus/image1.PNG",
@@ -175,10 +173,9 @@ const WORKS = [
     size: "17 × 9 × 1.5 cm",
     cover: "assets/IPoneCase/Rain.png",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     galleryLayout: "two-column",
     images: [
@@ -195,10 +192,9 @@ const WORKS = [
     size: "17 × 9 × 1.5 cm",
     cover: "assets/IPoneCase/Yippe.png",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     galleryLayout: "two-column",
     images: [
@@ -215,10 +211,9 @@ const WORKS = [
     size: "21 × 21 cm",
     cover: "assets/HannisParty.png",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     images: [
       "assets/HannisParty.png"
@@ -233,10 +228,9 @@ const WORKS = [
     size: "21 × 21 cm",
     cover: "assets/HalloweenCostume.png",
     coverFit: "contain",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     images: [
       "assets/HalloweenCostume.png"
@@ -250,10 +244,9 @@ const WORKS = [
     medium: "數位插畫",
     size: "49.0 × 34.7 cm",
     cover: "assets/skateboard.JPG",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     images: [
       "assets/skateboard.JPG",
@@ -268,10 +261,9 @@ const WORKS = [
     medium: "數位插畫、動畫",
     size: "1920 × 1080 px",
     cover: "assets/UNO.jpg",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
+    lead: "引言",
     description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
+      "說明"
     ],
     youtube: "Jj6Hb2sOipA",
     images: []
@@ -285,10 +277,9 @@ const WORKS = [
     medium: "數位插畫、郵票",
     size: "1000 × 1000 px",
     cover: "assets/Stamp/01.png",
-    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    lead: "引言",
     description: [
-      "這裡是作品描述範例。",
-      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+      "說明"
     ],
     galleryLayout: "marquee",
     images: [
@@ -306,10 +297,9 @@ const WORKS = [
     medium: "數位插畫",
     size: "2000 × 2000 px",
     cover: "assets/LongchenTemple/03.PNG",
-    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    lead: "引言",
     description: [
-      "這裡是作品描述範例。",
-      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+      "說明"
     ],
     galleryLayout: "grid",
     images: [
@@ -332,10 +322,9 @@ const WORKS = [
     medium: "插畫、麥克筆、金屬",
     size: "17.75 × 24.97 cm",
     cover: "assets/AppleValley/applevalley.jpg",
-    lead: "從最單純的灰階開始，試著留下紙張本身的呼吸感。",
+    lead: "引言",
     description: [
-      "這裡是作品描述範例。",
-      "首頁每頁目前顯示 6 件作品；作品超過 6 件時會自動出現頁碼。"
+      "說明"
     ],
     images: [
       "assets/AppleValley/applevalley.jpg",
@@ -358,21 +347,5 @@ const WORKS = [
       "assets/Dont drop the soap.png",
     ]
   },
-  {
-    id: 19,
-    title: "Diving",
-    category: "Illustation",
-    date: "2026",
-    medium: "數位插畫",
-    size: "21 × 29.7 cm",
-    cover: "assets/Diving.png",
-    lead: "以留白和重複構圖，記錄一段不需要被解釋的時間。",
-    description: [
-      "細部頁面的形式參考了你提供的網站：大標題、分類與日期、分隔線、內文，再往下放作品大圖。",
-      "如果想更像展覽型作品集，也可以在下一版加入作品年份、尺寸、媒材與展覽資訊。"
-    ],
-    images: [
-      "assets/Diving.png"
-    ]
   },
 ];
